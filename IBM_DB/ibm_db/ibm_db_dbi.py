@@ -51,6 +51,9 @@ SQL_INDEX_CLUSTERED = ibm_db.SQL_INDEX_CLUSTERED
 SQL_INDEX_OTHER = ibm_db.SQL_INDEX_OTHER
 SQL_DBMS_VER = ibm_db.SQL_DBMS_VER
 SQL_DBMS_NAME = ibm_db.SQL_DBMS_NAME
+USE_WCHAR = ibm_db.USE_WCHAR
+WCHAR_YES = ibm_db.WCHAR_YES
+WCHAR_NO = ibm_db.WCHAR_NO
 FIX_RETURN_TYPE = 1
 
 # Module globals
@@ -660,6 +663,7 @@ class Connection(object):
         self._cursor_list = []
         self.__dbms_name = ibm_db.get_db_info(conn_handler, SQL_DBMS_NAME)
         self.__dbms_ver = ibm_db.get_db_info(conn_handler, SQL_DBMS_VER)
+        self.FIX_RETURN_TYPE = 1 
 
     # This method is used to get the DBMS_NAME 
     def __get_dbms_name( self ):
