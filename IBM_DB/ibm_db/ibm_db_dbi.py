@@ -1140,9 +1140,6 @@ class Cursor(object):
 
         """
         messages = []
-        if self.conn_handler is None:
-            self.messages.append(ProgrammingError("Cursor cannot be closed; connection is no longer active."))
-            raise self.messages[len(self.messages) - 1]
         try:
             return_value = ibm_db.free_stmt(self.stmt_handler)
         except Exception, inst:
